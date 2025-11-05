@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CatDeployer</string>
+    <string name="cat_name">Nombre del gato</string>
+    <string name="cat_biography">Biografía gato:</string>
+</resources>
