@@ -65,6 +65,27 @@ class DataManager(context: Context) {
         return cats
     }
 
+    fun getCatsIds(): SnapshotStateList<CatUiModel> {
+        val SELECT = arrayOf<String?>(
+            ID, NAME, GENDER, BIOGRAPHY,
+            IMAGE_URL
+        )
+
+        val cursor =
+            db.query(TABLE_CATS, SELECT, null, null, null, null, ID)
+        val cats = SnapshotStateList<CatUiModel>()
+        var cat: CatUiModel
+        while (cursor.moveToNext()) {
+            cat = CatUiModel(cursor.getInt(0),enumValueOf<Gender>(cursor.getString(2)), cursor.getString(1), cursor.getString(3),cursor.getString(4))
+
+
+            cats.add(cat)
+        }
+        cursor.close()
+
+        return cats
+    }
+
     private inner class CustomSQLiteOpenHelper(
         context: Context
     ): SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION){

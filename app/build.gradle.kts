@@ -51,6 +51,9 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation("io.coil-kt.coil3:coil-compose:3.2.0")
     implementation("io.coil-kt.coil3:coil-network-okhttp:3.2.0")
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.preference)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -58,4 +61,6 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    implementation("androidx.datastore:datastore-preferences:1.1.7")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
 }
